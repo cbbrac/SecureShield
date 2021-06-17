@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+    }
+
+    public void createAccount(View view){
+         Map<String, String> map = new HashMap<String, String>();
+         map.put(masterUser, masterPassword);
     }
 
     public void logIn(View view){
@@ -29,8 +34,5 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-    public void createAccount(){
-         Map<String, String> map = new HashMap<String, String>();
-         map.put(masterUser, masterPassword);
-    }
+
 }
