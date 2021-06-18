@@ -2,6 +2,7 @@ package com.example.secureshield;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +26,7 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void createAccount(View view){
-         Map<String, String> map = new HashMap<String, String>();
+         Map<String, String> map = new HashMap<>();
          map.put(masterUser, masterPassword);
     }
 
