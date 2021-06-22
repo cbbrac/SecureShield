@@ -18,6 +18,7 @@ public class LogInActivity extends AppCompatActivity {
 
     String masterUser = editTextUser.getText().toString();
     String masterPassword = editTextPass.getText().toString();
+    Map<String, String> map = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,20 +27,26 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void createAccount(View view){
-         Map<String, String> map = new HashMap<>();
          map.put(masterUser, masterPassword);
     }
 
     public void logIn(View view){
+        if (editTextUser.equals(masterUser)){
+            System.out.println("User successful!");
+            if(editTextPass.equals(map.get(masterUser))){
+                System.out.println("Login successful!");
+//                Intent intent = new Intent(this, AccountActivity.class);
+//
+//                intent.putExtra("USER", masterUser);
+//                intent.putExtra("PASSWORD", masterPassword);
+//
+//                startActivity(intent);
 
-        Intent intent = new Intent(this, UserInput.class);
-
-        intent.putExtra("USER", masterUser);
-        intent.putExtra("PASSWORD", masterPassword);
-
-        startActivity(intent);
-
-}
-
-
+            } else if (!editTextPass.equals(map.get(masterUser))){
+                System.out.println("Wrong pass");
+            }
+        } else if (!editTextUser.equals(masterUser)){
+            System.out.println("That username doesn't exist");
+        }
+    }
 }
